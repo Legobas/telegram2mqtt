@@ -10,3 +10,10 @@ Telegram2mqtt is a service that allows you to connect your Telegram account to a
 
 ![Architecture](architecture.png)
 
+
+## Credits
+
+* [Paho Mqtt Client](https://github.com/eclipse/paho.mqtt.golang)
+* [Go-Telegram](https://github.com/go-telegram/bot)
+* [ZeroLog](https://github.com/rs/zerolog)
+* [D2](https://d2lang.com)
