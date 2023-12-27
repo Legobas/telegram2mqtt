@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build, Test & Push to Docker
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: next_version
+        uses: zwaldowski/semver-release-action@v3
+        with:
+          dry_run: false
+          prefix: v
+          bump: minor
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+            echo "version: ${{ steps.next_version.outputs.version }}"
+            echo "version tag: ${{ steps.next_version.outputs.version_tag }}"
+            echo "${{ steps.next_version.outputs.version }}" > version.txt
+ 
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '>=1.20'
+  
+      - name: Build
+        run: go build -v ./...
+  
+      - name: Test
+        run: go test -v ./...
+
