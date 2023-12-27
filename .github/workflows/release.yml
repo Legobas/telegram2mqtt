@@ -19,7 +19,7 @@ jobs:
         with:
           dry_run: false
           prefix: v
-          bump: minor
+          bump: patch
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
             echo "version: ${{ steps.next_version.outputs.version }}"
