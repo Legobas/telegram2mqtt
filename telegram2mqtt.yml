@@ -1,0 +1,20 @@
+mqtt:
+  url: "tcp://<MQTT SERVER>:1883"
+  username: <MQTT USERNAME>
+  password: <MQTT PASSWORD>
+  qos: 0
+  retain: false
+
+telegram:
+  api_key: <Botfather Token>
+  chat_id: <CHATID, get with telegram command /info>
+
+commands:
+  - command: /light1
+    mqtt-topic: rfxcom2mqtt/command/Switch1
+  - command: /light2on
+    mqtt-topic: rfxcom2mqtt/command/Switch2
+    mqtt-message: on
+  - command: /light2off
+    mqtt-topic: rfxcom2mqtt/command/Switch2
+    mqtt-message: off
