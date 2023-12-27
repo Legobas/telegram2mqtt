@@ -1,12 +1,10 @@
-module localhost/telegram2mqtt
+module github.com/Legobas/telegram2mqtt
 
-go 1.21.4
+go 1.21.5
 
 require (
-	github.com/carlmjohnson/versioninfo v0.22.5
 	github.com/eclipse/paho.mqtt.golang v1.4.3
 	github.com/go-telegram/bot v0.8.3
-	github.com/go-telegram/ui v0.1.2
 	github.com/rs/zerolog v1.31.0
 	gopkg.in/yaml.v3 v3.0.1
 )
