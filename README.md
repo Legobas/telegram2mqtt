@@ -10,6 +10,7 @@ Telegram2mqtt is a service that allows you to connect your Telegram account to a
 
 ![Architecture](architecture.png)
 
+This is a work in progress...
 
 ## Credits
 
