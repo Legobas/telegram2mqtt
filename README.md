@@ -55,6 +55,12 @@ The `telegram2mqtt.yml` file has to exist in one of the following locations:
 | command                   | Telegram command, like /start or /test                                   |                                       
 | mqtt-topic                | MQTT Topic to which the message will be sent                             |
 | mqtt-message              | The MQTT message                                                         |
+| keyboard-title            | Message on top of Telegram keyboard                                      |
+|   **keyboard**            |                                                                          |
+|   id                      | unique ID                                                                |
+|   title                   | Keyboard button text                                                     |
+|   mqtt-topic              | MQTT Topic for this button                                               |
+|   mqtt-message            | The MQTT message for this button                                         |
 
 Example telegram2mqtt.yml:
 
@@ -79,8 +85,25 @@ Example telegram2mqtt.yml:
       - command: /light2off
         mqtt-topic: rfxcom2mqtt/command/Switch2
         mqtt-message: off
+      - command: /lights
+        keyboard-title: Select Light
+        keyboard:
+          - id: light_1_on
+            title: Light1 on
+            mqtt-topic: zigbee2mqtt/switch_1/set/state
+            mqtt-message: ON
+          - id: light_1_off
+            title: Light1 off
+            mqtt-topic: zigbee2mqtt/switch_1/set/state
+            mqtt-message: OFF
 ```
+See also: [Example telegram2mqtt.yml](./telegram2mqtt.yml)
 
+## Setup
+
+If no chat_id is found in the configuration the service will only log the received messages. 
+Enter /info in the Telegram app to get the Chat ID for the configuration.
+Add your chat_id to the telegram2mqtt.yml configuration file and restart the service.
 
 ## Credits
 

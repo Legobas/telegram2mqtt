@@ -18,3 +18,22 @@ commands:
   - command: /light2off
     mqtt-topic: rfxcom2mqtt/command/Switch2
     mqtt-message: off
+  - command: /lights
+    keyboard-title: Select Light
+    keyboard:
+      - id: light_1_on
+        title: Light1 on
+        mqtt-topic: zigbee2mqtt/switch_1/set/state
+        mqtt-message: ON
+      - id: light_1_off
+        title: Light1 off
+        mqtt-topic: zigbee2mqtt/switch_1/set/state
+        mqtt-message: OFF
+      - id: light_2_on
+        title: Light2 on
+        mqtt-topic: zigbee2mqtt/switch_2/set/state
+        mqtt-message: ON
+      - id: light_2_off
+        title: Light2 off
+        mqtt-topic: zigbee2mqtt/switch_2/set/state
+        mqtt-message: OFF
