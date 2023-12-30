@@ -41,26 +41,26 @@ The `telegram2mqtt.yml` file has to exist in one of the following locations:
 
 ## Configuration options
 
-| Config item               | Description                                                              |
-| ------------------------- | ------------------------------------------------------------------------ |
-| **mqtt**                  |                                                                          |
-| url                       | MQTT Server URL                                                          |
-| username/password         | MQTT Server Credentials                                                  |
-| qos                       | MQTT Server Quality Of Service                                           |
-| retain                    | MQTT Server Retain messages                                              |
-| **telegram**              |                                                                          |
-| api_key                   | Botfather Token                                                          |
-| chat_id                   | CHATID, get with telegram command /info                                  |
-| **commands**              |                                                                          |
-| command                   | Telegram command, like /start or /test                                   |                                       
-| mqtt-topic                | MQTT Topic to which the message will be sent                             |
-| mqtt-message              | The MQTT message                                                         |
-| keyboard-title            | Message on top of Telegram keyboard                                      |
-|   **keyboard**            |                                                                          |
-|   id                      | unique ID                                                                |
-|   title                   | Keyboard button text                                                     |
-|   mqtt-topic              | MQTT Topic for this button                                               |
-|   mqtt-message            | The MQTT message for this button                                         |
+| Config item               |               | Description                                                              |
+| ------------------------- | ------------- | ------------------------------------------------------------------------ |
+| **mqtt**                  |               |                                                                          |
+| url                       |               | MQTT Server URL                                                          |
+| username/password         |               | MQTT Server Credentials                                                  |
+| qos                       |               | MQTT Server Quality Of Service                                           |
+| retain                    |               | MQTT Server Retain messages                                              |
+| **telegram**              |               |                                                                          |
+| api_key                   |               | Botfather Token                                                          |
+| chat_id                   |               | CHATID, get with telegram command /info                                  |
+| **commands**              |               |                                                                          |
+| command                   |               | Telegram command, like /start or /test                                   |                                       
+| mqtt-topic                |               | MQTT Topic to which the message will be sent                             |
+| mqtt-message              |               | The MQTT message                                                         |
+| keyboard-title            |               | Message on top of Telegram keyboard                                      |
+| **keyboard**              |               |                                                                          |
+|                           |  id           | unique ID                                                                |
+|                           |  title        | Keyboard button text                                                     |
+|                           |  mqtt-topic   | MQTT Topic for this button                                               |
+|                           |  mqtt-message | The MQTT message for this button                                         |
 
 Example telegram2mqtt.yml:
 
